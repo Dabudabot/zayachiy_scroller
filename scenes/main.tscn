@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://c118k2sbpbgn1"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_aelej"]
+[ext_resource type="PackedScene" uid="uid://b4nqx0hgienye" path="res://scenes/bg.tscn" id="1_kht7l"]
+[ext_resource type="PackedScene" uid="uid://cnqj7npedhwuq" path="res://scenes/ground.tscn" id="2_dhjef"]
+[ext_resource type="PackedScene" uid="uid://d3ncs736pomfe" path="res://scenes/char.tscn" id="3_y2xpc"]
+[ext_resource type="PackedScene" uid="uid://dhrbtkke4ouau" path="res://scenes/hud.tscn" id="5_7e1ps"]
+[ext_resource type="AudioStream" uid="uid://bwo87rc8okr4f" path="res://assets/sound/music.ogg" id="6_cciqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1n3l"]
+size = Vector2(1152, 648)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_aelej")
+
+[node name="bg" parent="." instance=ExtResource("1_kht7l")]
+
+[node name="Ground" parent="." instance=ExtResource("2_dhjef")]
+
+[node name="Char" parent="." instance=ExtResource("3_y2xpc")]
+z_index = 1
+position = Vector2(215, 450)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Camera2D"]
+z_index = 1
+shape = SubResource("RectangleShape2D_l1n3l")
+action = "ui_select"
+
+[node name="HUD" parent="." instance=ExtResource("5_7e1ps")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_cciqi")
+volume_db = -25.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="death_animation_finished" from="Char" to="." method="_on_char_death_animation_finished"]
