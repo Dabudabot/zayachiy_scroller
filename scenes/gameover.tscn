@@ -1,139 +1,57 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgssx8f8bdh24"]
+[gd_scene load_steps=15 format=3 uid="uid://dgssx8f8bdh24"]
 
 [ext_resource type="Script" path="res://scenes/gameover.gd" id="1_qybjd"]
-[ext_resource type="Texture2D" uid="uid://co00jh082cn5y" path="res://assets/img/background/1 - solid.png" id="1_w1o0d"]
-[ext_resource type="Texture2D" uid="uid://cebos8wta3ue" path="res://assets/img/background/5 - road.png" id="2_gergf"]
+[ext_resource type="PackedScene" uid="uid://b4nqx0hgienye" path="res://scenes/bg.tscn" id="2_1y2h5"]
 [ext_resource type="Texture2D" uid="uid://c48we0h0txcqi" path="res://assets/img/HUD/Refresh.png" id="2_sx3xp"]
-[ext_resource type="Texture2D" uid="uid://oe382fiyrj1e" path="res://assets/img/HUD/Crown.png" id="4_xl3a2"]
 [ext_resource type="FontFile" uid="uid://dnd5m8sttr5p1" path="res://assets/fonts/joystix monospace.otf" id="5_gnny7"]
-[ext_resource type="Texture2D" uid="uid://bn2hkp16i73aw" path="res://assets/img/HUD/Clock.png" id="6_jyqdw"]
-[ext_resource type="Texture2D" uid="uid://06yb2w3501cj" path="res://assets/img/Vitaliy.png" id="7_aysso"]
-[ext_resource type="Texture2D" uid="uid://oxdjaul1qd17" path="res://assets/img/HUD/Play.png" id="8_x3x8w"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qniic"]
-atlas = ExtResource("7_aysso")
-region = Rect2(0, 0, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_774f5"]
-atlas = ExtResource("7_aysso")
-region = Rect2(100, 0, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_av2g2"]
-atlas = ExtResource("7_aysso")
-region = Rect2(200, 0, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uiv0s"]
-atlas = ExtResource("7_aysso")
-region = Rect2(300, 0, 100, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85i3h"]
-atlas = ExtResource("7_aysso")
-region = Rect2(400, 0, 100, 150)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_34nux"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qniic")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_774f5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_av2g2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uiv0s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85i3h")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://dx7y8k4qarsv3" path="res://assets/img/HUD/VCrown.png" id="5_x6m5k"]
+[ext_resource type="Texture2D" uid="uid://cnparnqtyvspt" path="res://assets/img/HUD/ToWebRed.png" id="6_6bgt3"]
+[ext_resource type="Texture2D" uid="uid://rn4dqica0f4k" path="res://assets/img/HUD/VClock.png" id="7_sep4w"]
+[ext_resource type="Texture2D" uid="uid://v8ngucxou7qg" path="res://assets/img/HUD/Daulet.png" id="10_ngfqx"]
+[ext_resource type="Texture2D" uid="uid://di64de3ryarmv" path="res://assets/img/HUD/Mariam.png" id="11_kgh2o"]
+[ext_resource type="Texture2D" uid="uid://dcle3ygupt5fy" path="res://assets/img/HUD/Bad.png" id="12_qjjm6"]
+[ext_resource type="Texture2D" uid="uid://w1bh6t56t402" path="res://assets/img/HUD/DeadVitalik.png" id="13_e5xgk"]
+[ext_resource type="Texture2D" uid="uid://c83exxlnn5rlv" path="res://assets/img/HUD/win500.png" id="14_4u2sa"]
+[ext_resource type="Texture2D" uid="uid://dqnkesl831w1x" path="res://assets/img/HUD/Win700.png" id="15_uwks7"]
+[ext_resource type="Texture2D" uid="uid://cnbhf11a1oose" path="res://assets/img/HUD/AliveVitalik.png" id="16_kn7wv"]
 
 [node name="GameOver" type="Node"]
 script = ExtResource("1_qybjd")
 
-[node name="bg" type="Sprite2D" parent="."]
-scale = Vector2(72, 72)
-texture = ExtResource("1_w1o0d")
-centered = false
-
-[node name="road" type="Sprite2D" parent="."]
-position = Vector2(0, 511)
-texture = ExtResource("2_gergf")
-centered = false
-
-[node name="restartBtn" type="TouchScreenButton" parent="."]
-position = Vector2(122, 232)
-texture_normal = ExtResource("2_sx3xp")
-
-[node name="InfoStr" type="Label" parent="."]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -716.0
-offset_top = -261.0
-offset_right = -61.0
-offset_bottom = 37.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 8
-theme_override_fonts/font = ExtResource("5_gnny7")
-theme_override_font_sizes/font_size = 20
-text = "Молодец! Твой приз - промокод 
-на 500 рублей 
-ПРЫГУН3000. 
-Примени его, когда будешь покупать 
-билет на Заячий стон!"
-autowrap_mode = 3
-
-[node name="Vitaliy" type="AnimatedSprite2D" parent="."]
-position = Vector2(936, 484)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_34nux")
-animation = &"idle"
-autoplay = "idle"
-
-[node name="webBtn" type="TouchScreenButton" parent="."]
-position = Vector2(122, 28)
-texture_normal = ExtResource("8_x3x8w")
+[node name="bg" parent="." instance=ExtResource("2_1y2h5")]
 
 [node name="HighScore" type="Sprite2D" parent="."]
-position = Vector2(740, 424)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_xl3a2")
+texture_filter = 1
+position = Vector2(651, 461)
+scale = Vector2(2, 2)
+texture = ExtResource("5_x6m5k")
 centered = false
 
 [node name="HighScoreStr" type="Label" parent="HighScore"]
 anchors_preset = -1
-anchor_left = 0.679
-anchor_top = 0.5
-anchor_right = 0.679
-anchor_bottom = 0.5
-offset_left = -56.553
-offset_top = -29.5
-offset_right = 59.447
-offset_bottom = 28.5
+anchor_left = 0.5
+anchor_top = 0.793
+anchor_right = 0.5
+anchor_bottom = 0.793
+offset_left = -33.0
+offset_top = -14.666
+offset_right = 34.0
+offset_bottom = 9.334
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.223529, 0.168627, 0.207843, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.694118, 0.403922, 0.25098, 1)
 theme_override_fonts/font = ExtResource("5_gnny7")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 15
 text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CurrScore" type="Sprite2D" parent="."]
-position = Vector2(1012, 424)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("6_jyqdw")
+texture_filter = 1
+position = Vector2(367, 461)
+scale = Vector2(2, 2)
+texture = ExtResource("7_sep4w")
 centered = false
 
 [node name="CurrScoreStr" type="Label" parent="CurrScore"]
@@ -142,49 +60,96 @@ anchor_left = 0.679
 anchor_top = 0.5
 anchor_right = 0.679
 anchor_bottom = 0.5
-offset_left = -56.553
-offset_top = -29.5
-offset_right = 59.447
-offset_bottom = 28.5
+offset_left = -36.456
+offset_top = 7.0
+offset_right = 13.544
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.223529, 0.168627, 0.207843, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_gnny7")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 15
 text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 106.0
-offset_top = -177.0
-offset_right = 479.0
-offset_bottom = -157.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.819608, 0.74902, 0.690196, 1)
-theme_override_fonts/font = ExtResource("5_gnny7")
-text = "dev: @dabudabot"
+[node name="Daulet" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(30, 545)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("10_ngfqx")
 
-[node name="Label2" type="Label" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1049.0
-offset_top = -215.0
-offset_right = -837.0
-offset_bottom = -192.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.819608, 0.74902, 0.690196, 1)
-theme_override_fonts/font = ExtResource("5_gnny7")
-text = "art: @sourwaters"
+[node name="Mariam" type="TouchScreenButton" parent="."]
+texture_filter = 1
+position = Vector2(909, 545)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("11_kgh2o")
 
-[connection signal="pressed" from="restartBtn" to="." method="_on_restart_btn_pressed"]
-[connection signal="pressed" from="webBtn" to="." method="_on_web_btn_pressed"]
+[node name="Bad" type="Node2D" parent="."]
+
+[node name="restartBtn" type="TouchScreenButton" parent="Bad"]
+texture_filter = 1
+position = Vector2(30, 210)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_sx3xp")
+
+[node name="webBtn" type="TouchScreenButton" parent="Bad"]
+texture_filter = 1
+position = Vector2(805, 210)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_6bgt3")
+
+[node name="Bad" type="Sprite2D" parent="Bad"]
+texture_filter = 1
+position = Vector2(576, 254)
+scale = Vector2(2, 2)
+texture = ExtResource("12_qjjm6")
+
+[node name="Dead" type="Sprite2D" parent="Bad"]
+texture_filter = 1
+position = Vector2(576, 529)
+scale = Vector2(2, 2)
+texture = ExtResource("13_e5xgk")
+
+[node name="Good" type="Node2D" parent="."]
+visible = false
+
+[node name="restartBtn" type="TouchScreenButton" parent="Good"]
+texture_filter = 1
+position = Vector2(782, 345)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_sx3xp")
+
+[node name="webBtn" type="TouchScreenButton" parent="Good"]
+texture_filter = 1
+position = Vector2(547, 161)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("6_6bgt3")
+
+[node name="win500" type="TouchScreenButton" parent="Good"]
+texture_filter = 1
+position = Vector2(41, 23)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("14_4u2sa")
+
+[node name="win700" type="TouchScreenButton" parent="Good"]
+texture_filter = 1
+position = Vector2(41, 23)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("15_uwks7")
+
+[node name="Alive" type="Sprite2D" parent="Good"]
+texture_filter = 1
+position = Vector2(576, 529)
+scale = Vector2(2, 2)
+texture = ExtResource("16_kn7wv")
+
+[connection signal="pressed" from="Daulet" to="." method="_on_daulet_pressed"]
+[connection signal="pressed" from="Mariam" to="." method="_on_mariam_pressed"]
+[connection signal="pressed" from="Bad/restartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="Bad/webBtn" to="." method="_on_web_btn_pressed"]
+[connection signal="pressed" from="Good/restartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="Good/webBtn" to="." method="_on_web_btn_pressed"]
+[connection signal="pressed" from="Good/win500" to="." method="_on_win_500_pressed"]
+[connection signal="pressed" from="Good/win700" to="." method="_on_win_700_pressed"]

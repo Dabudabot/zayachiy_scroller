@@ -1,45 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4nqx0hgienye"]
+[gd_scene load_steps=7 format=3 uid="uid://b4nqx0hgienye"]
 
 [ext_resource type="Texture2D" uid="uid://co00jh082cn5y" path="res://assets/img/background/1 - solid.png" id="1_ry2a7"]
 [ext_resource type="Texture2D" uid="uid://bmdi4jv3l6rfw" path="res://assets/img/background/2 - pink.png" id="2_vv2tc"]
 [ext_resource type="Texture2D" uid="uid://dmydbjshlesnk" path="res://assets/img/background/3 - city.png" id="3_soh3w"]
 [ext_resource type="Texture2D" uid="uid://dm4h74cj0n56r" path="res://assets/img/background/4 - clouds.png" id="4_7mb18"]
+[ext_resource type="Texture2D" uid="uid://b3egt7kgk6w03" path="res://assets/img/background/4 - grad.png" id="5_i5jj7"]
+[ext_resource type="Texture2D" uid="uid://cebos8wta3ue" path="res://assets/img/background/5 - road.png" id="5_w1wqh"]
 
 [node name="bg" type="ParallaxBackground"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="solid" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(72, 72)
 texture = ExtResource("1_ry2a7")
 centered = false
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+[node name="FarCityParallax" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.6, 1)
 motion_mirroring = Vector2(1152, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+[node name="FarCitySprite" type="Sprite2D" parent="FarCityParallax"]
 texture_filter = 1
 scale = Vector2(1.286, 1.286)
 texture = ExtResource("2_vv2tc")
 centered = false
 offset = Vector2(0, 126)
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+[node name="CloseCityParallax" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(1152, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+[node name="CloseCitySprite" type="Sprite2D" parent="CloseCityParallax"]
 texture_filter = 1
 texture = ExtResource("3_soh3w")
 centered = false
 offset = Vector2(0, 146)
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.9, 1)
+[node name="CloudsParallax" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
 motion_mirroring = Vector2(1152, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+[node name="CloudsSprte" type="Sprite2D" parent="CloudsParallax"]
 texture_filter = 1
 texture = ExtResource("4_7mb18")
 centered = false
-offset = Vector2(20, 10)
+offset = Vector2(20, 30)
+
+[node name="GradientSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1152, 1)
+texture = ExtResource("5_i5jj7")
+centered = false
+
+[node name="RoadParallax" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="RoadSprite" type="Sprite2D" parent="RoadParallax"]
+texture_filter = 1
+texture = ExtResource("5_w1wqh")
+centered = false
+offset = Vector2(0, 508)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://0d2mgtg4eqa"]
+
+[ext_resource type="Texture2D" uid="uid://c2khkikqt1518" path="res://assets/img/obstacles/traffic.png" id="1_5hfcg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqah0"]
+size = Vector2(54.5, 25)
+
+[node name="Wheel" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.99491
+scale = Vector2(2, 2)
+texture = ExtResource("1_5hfcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14.25, -1)
+shape = SubResource("RectangleShape2D_nqah0")

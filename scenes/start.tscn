@@ -1,9 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://doabvaxws5k7r"]
+[gd_scene load_steps=33 format=3 uid="uid://doabvaxws5k7r"]
 
 [ext_resource type="Script" path="res://scenes/start.gd" id="1_bw5kt"]
-[ext_resource type="Texture2D" uid="uid://co00jh082cn5y" path="res://assets/img/background/1 - solid.png" id="1_v1nj0"]
-[ext_resource type="Texture2D" uid="uid://cebos8wta3ue" path="res://assets/img/background/5 - road.png" id="2_unv3s"]
-[ext_resource type="Texture2D" uid="uid://dl0jgj1o2lwsv" path="res://assets/img/HUD/Logo.png" id="3_mgtqd"]
+[ext_resource type="PackedScene" uid="uid://b4nqx0hgienye" path="res://scenes/bg.tscn" id="2_qtvfk"]
+[ext_resource type="Texture2D" uid="uid://bme2syak7o2oa" path="res://assets/img/HUD/ToWebBlue.png" id="3_d4s55"]
 [ext_resource type="Texture2D" uid="uid://oxdjaul1qd17" path="res://assets/img/HUD/Play.png" id="4_f5lwa"]
 [ext_resource type="Texture2D" uid="uid://06yb2w3501cj" path="res://assets/img/Vitaliy.png" id="5_ah550"]
 [ext_resource type="Texture2D" uid="uid://22faxos4taqe" path="res://assets/img/Max.png" id="6_6gw0a"]
@@ -185,44 +184,42 @@ animations = [{
 [node name="Start" type="Node"]
 script = ExtResource("1_bw5kt")
 
-[node name="bg" type="Sprite2D" parent="."]
-scale = Vector2(72, 72)
-texture = ExtResource("1_v1nj0")
-centered = false
-
-[node name="road" type="Sprite2D" parent="."]
-position = Vector2(0, 511)
-texture = ExtResource("2_unv3s")
-centered = false
+[node name="bg" parent="." instance=ExtResource("2_qtvfk")]
 
 [node name="WebBtn" type="TouchScreenButton" parent="."]
-position = Vector2(1063, 21)
-scale = Vector2(0.7, 0.56)
-texture_normal = ExtResource("3_mgtqd")
+texture_filter = 1
+position = Vector2(159, 364)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_d4s55")
 action = "ui_left"
 
 [node name="PlayBtn" type="TouchScreenButton" parent="."]
-position = Vector2(475.5, 171)
+texture_filter = 1
+position = Vector2(45, 171)
+scale = Vector2(2, 2)
 texture_normal = ExtResource("4_f5lwa")
 
 [node name="Vitaliy" type="AnimatedSprite2D" parent="."]
-position = Vector2(177, 456)
-scale = Vector2(2, 2)
+texture_filter = 1
+position = Vector2(566, 465)
+scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_ojucd")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.938883
 
 [node name="Max" type="AnimatedSprite2D" parent="."]
-position = Vector2(395, 525)
-scale = Vector2(2, 2)
+texture_filter = 1
+position = Vector2(996, 466)
+scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_k12cw")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.279616
 
 [node name="Kirill" type="AnimatedSprite2D" parent="."]
-position = Vector2(724, 468)
+texture_filter = 1
+position = Vector2(864, 477)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_71238")
 animation = &"idle"
@@ -230,12 +227,15 @@ autoplay = "idle"
 frame_progress = 0.0969209
 
 [node name="Alex" type="AnimatedSprite2D" parent="."]
-position = Vector2(946, 467)
-scale = Vector2(2, 2)
+texture_filter = 1
+position = Vector2(711, 480)
+scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_80kbh")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.400953
 
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="WebBtn" to="." method="_on_web_btn_pressed"]
 [connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="ready" from="Alex" to="." method="_on_alex_ready"]

@@ -40,6 +40,7 @@ theme_override_fonts/font = ExtResource("1_3fits")
 text = "art: @sourwaters"
 
 [node name="HighScore" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(1000, 30)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_xx2jq")
@@ -67,6 +68,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CurrScore" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(30, 30)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_ya835")
