@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://doabvaxws5k7r"]
+[gd_scene load_steps=37 format=3 uid="uid://doabvaxws5k7r"]
 
 [ext_resource type="Script" path="res://scenes/start.gd" id="1_bw5kt"]
 [ext_resource type="PackedScene" uid="uid://b4nqx0hgienye" path="res://scenes/bg.tscn" id="2_qtvfk"]
@@ -52,6 +52,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyg7c"]
+size = Vector2(31, 58)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6q0h"]
 atlas = ExtResource("6_6gw0a")
 region = Rect2(0, 0, 100, 150)
@@ -94,6 +97,9 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3qpn"]
+size = Vector2(31, 57)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84syb"]
 atlas = ExtResource("7_byevn")
@@ -138,6 +144,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dj46"]
+size = Vector2(26, 50)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jeua1"]
 atlas = ExtResource("8_3i0db")
 region = Rect2(0, 0, 100, 150)
@@ -181,6 +190,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae0fe"]
+size = Vector2(21, 40)
+
 [node name="Start" type="Node"]
 script = ExtResource("1_bw5kt")
 
@@ -208,6 +220,10 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.938883
 
+[node name="VitaliyBtn" type="TouchScreenButton" parent="Vitaliy"]
+scale = Vector2(1.75, 1.75)
+shape = SubResource("RectangleShape2D_eyg7c")
+
 [node name="Max" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(996, 466)
@@ -216,6 +232,10 @@ sprite_frames = SubResource("SpriteFrames_k12cw")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.279616
+
+[node name="MaxBtn" type="TouchScreenButton" parent="Max"]
+scale = Vector2(1.75, 1.75)
+shape = SubResource("RectangleShape2D_n3qpn")
 
 [node name="Kirill" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -226,6 +246,10 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.0969209
 
+[node name="KirillBtn" type="TouchScreenButton" parent="Kirill"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_0dj46")
+
 [node name="Alex" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(711, 480)
@@ -235,7 +259,14 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.400953
 
+[node name="AlexBtn" type="TouchScreenButton" parent="Alex"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_ae0fe")
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="WebBtn" to="." method="_on_web_btn_pressed"]
 [connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
-[connection signal="ready" from="Alex" to="." method="_on_alex_ready"]
+[connection signal="pressed" from="Vitaliy/VitaliyBtn" to="." method="_on_vitaliy_btn_pressed"]
+[connection signal="pressed" from="Max/MaxBtn" to="." method="_on_max_btn_pressed"]
+[connection signal="pressed" from="Kirill/KirillBtn" to="." method="_on_kirill_btn_pressed"]
+[connection signal="pressed" from="Alex/AlexBtn" to="." method="_on_alex_btn_pressed"]

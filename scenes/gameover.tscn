@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgssx8f8bdh24"]
+[gd_scene load_steps=26 format=3 uid="uid://dgssx8f8bdh24"]
 
 [ext_resource type="Script" path="res://scenes/gameover.gd" id="1_qybjd"]
 [ext_resource type="PackedScene" uid="uid://b4nqx0hgienye" path="res://scenes/bg.tscn" id="2_1y2h5"]
@@ -7,16 +7,128 @@
 [ext_resource type="Texture2D" uid="uid://dx7y8k4qarsv3" path="res://assets/img/HUD/VCrown.png" id="5_x6m5k"]
 [ext_resource type="Texture2D" uid="uid://cnparnqtyvspt" path="res://assets/img/HUD/ToWebRed.png" id="6_6bgt3"]
 [ext_resource type="Texture2D" uid="uid://rn4dqica0f4k" path="res://assets/img/HUD/VClock.png" id="7_sep4w"]
+[ext_resource type="Texture2D" uid="uid://bbjcm8kx6j07w" path="res://assets/img/heads/alive_Alex.png" id="8_ojsty"]
+[ext_resource type="Texture2D" uid="uid://bm3u5gt6yv43c" path="res://assets/img/heads/alive_Kirill.png" id="9_f60gj"]
+[ext_resource type="Texture2D" uid="uid://bljlwbk7pjjij" path="res://assets/img/heads/alive_Max.png" id="10_lw5ek"]
 [ext_resource type="Texture2D" uid="uid://v8ngucxou7qg" path="res://assets/img/HUD/Daulet.png" id="10_ngfqx"]
+[ext_resource type="Texture2D" uid="uid://dtlkympm31j2i" path="res://assets/img/heads/alive_Vitaliy.png" id="11_c8f5o"]
 [ext_resource type="Texture2D" uid="uid://di64de3ryarmv" path="res://assets/img/HUD/Mariam.png" id="11_kgh2o"]
-[ext_resource type="Texture2D" uid="uid://dcle3ygupt5fy" path="res://assets/img/HUD/Bad.png" id="12_qjjm6"]
-[ext_resource type="Texture2D" uid="uid://w1bh6t56t402" path="res://assets/img/HUD/DeadVitalik.png" id="13_e5xgk"]
+[ext_resource type="Texture2D" uid="uid://20r2dm3bly5d" path="res://assets/img/heads/dead_Alex.png" id="12_l8xi0"]
+[ext_resource type="Texture2D" uid="uid://dtgxciou7r31x" path="res://assets/img/heads/dead_Kirill.png" id="13_1d1ko"]
 [ext_resource type="Texture2D" uid="uid://c83exxlnn5rlv" path="res://assets/img/HUD/win500.png" id="14_4u2sa"]
+[ext_resource type="Texture2D" uid="uid://lsl4p7xokj2v" path="res://assets/img/heads/dead_Max.png" id="14_nr724"]
+[ext_resource type="Texture2D" uid="uid://cxo5xynxs8tk1" path="res://assets/img/heads/dead_Vitaliy.png" id="15_o3b4x"]
 [ext_resource type="Texture2D" uid="uid://dqnkesl831w1x" path="res://assets/img/HUD/Win700.png" id="15_uwks7"]
-[ext_resource type="Texture2D" uid="uid://cnbhf11a1oose" path="res://assets/img/HUD/AliveVitalik.png" id="16_kn7wv"]
+[ext_resource type="Texture2D" uid="uid://m2hgpcvud4q2" path="res://assets/img/signs/sign_Alex.png" id="16_qilxy"]
+[ext_resource type="Texture2D" uid="uid://b3idphssfw06t" path="res://assets/img/signs/sign_Kirill.png" id="17_jtqsh"]
+[ext_resource type="Texture2D" uid="uid://cdkjaiunoi0g" path="res://assets/img/signs/sign_Max.png" id="18_elftq"]
+[ext_resource type="Texture2D" uid="uid://bl5r0jeo7awto" path="res://assets/img/signs/sign_Vitaliy.png" id="19_g1mhd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g548s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ojsty")
+}],
+"loop": true,
+"name": &"alive_Alex",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_f60gj")
+}],
+"loop": true,
+"name": &"alive_Kirill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_lw5ek")
+}],
+"loop": true,
+"name": &"alive_Max",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_c8f5o")
+}],
+"loop": true,
+"name": &"alive_Vitaliy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_l8xi0")
+}],
+"loop": true,
+"name": &"dead_Alex",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_1d1ko")
+}],
+"loop": true,
+"name": &"dead_Kirill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_nr724")
+}],
+"loop": true,
+"name": &"dead_Max",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_o3b4x")
+}],
+"loop": true,
+"name": &"dead_Vitaliy",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ur4n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_qilxy")
+}],
+"loop": true,
+"name": &"sign_Alex",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_jtqsh")
+}],
+"loop": true,
+"name": &"sign_Kirill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_elftq")
+}],
+"loop": true,
+"name": &"sign_Max",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_g1mhd")
+}],
+"loop": true,
+"name": &"sign_Vitaliy",
+"speed": 5.0
+}]
 
 [node name="GameOver" type="Node"]
 script = ExtResource("1_qybjd")
+metadata/_edit_vertical_guides_ = [30.0, 1124.0]
 
 [node name="bg" parent="." instance=ExtResource("2_1y2h5")]
 
@@ -76,74 +188,70 @@ vertical_alignment = 1
 
 [node name="Daulet" type="TouchScreenButton" parent="."]
 texture_filter = 1
-position = Vector2(30, 545)
+position = Vector2(29, 545)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("10_ngfqx")
 
 [node name="Mariam" type="TouchScreenButton" parent="."]
 texture_filter = 1
-position = Vector2(909, 545)
+position = Vector2(907, 545)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("11_kgh2o")
+
+[node name="Head" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 529)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_g548s")
+animation = &"dead_Max"
 
 [node name="Bad" type="Node2D" parent="."]
 
 [node name="restartBtn" type="TouchScreenButton" parent="Bad"]
 texture_filter = 1
-position = Vector2(30, 210)
+position = Vector2(29, 210)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_sx3xp")
 
 [node name="webBtn" type="TouchScreenButton" parent="Bad"]
 texture_filter = 1
-position = Vector2(805, 210)
-scale = Vector2(2, 2)
+position = Vector2(798, 210)
+scale = Vector2(1.1, 1.1)
 texture_normal = ExtResource("6_6bgt3")
 
-[node name="Bad" type="Sprite2D" parent="Bad"]
+[node name="Sign" type="AnimatedSprite2D" parent="Bad"]
 texture_filter = 1
-position = Vector2(576, 254)
+position = Vector2(576, 262)
 scale = Vector2(2, 2)
-texture = ExtResource("12_qjjm6")
-
-[node name="Dead" type="Sprite2D" parent="Bad"]
-texture_filter = 1
-position = Vector2(576, 529)
-scale = Vector2(2, 2)
-texture = ExtResource("13_e5xgk")
+sprite_frames = SubResource("SpriteFrames_2ur4n")
+animation = &"sign_Alex"
 
 [node name="Good" type="Node2D" parent="."]
 visible = false
 
 [node name="restartBtn" type="TouchScreenButton" parent="Good"]
 texture_filter = 1
-position = Vector2(782, 345)
+position = Vector2(803, 345)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_sx3xp")
 
 [node name="webBtn" type="TouchScreenButton" parent="Good"]
 texture_filter = 1
-position = Vector2(547, 161)
-scale = Vector2(3.5, 3.5)
+position = Vector2(531, 161)
+scale = Vector2(2, 2)
 texture_normal = ExtResource("6_6bgt3")
 
 [node name="win500" type="TouchScreenButton" parent="Good"]
 texture_filter = 1
-position = Vector2(41, 23)
+position = Vector2(30, 23)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("14_4u2sa")
 
 [node name="win700" type="TouchScreenButton" parent="Good"]
 texture_filter = 1
-position = Vector2(41, 23)
+position = Vector2(29, 23)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("15_uwks7")
-
-[node name="Alive" type="Sprite2D" parent="Good"]
-texture_filter = 1
-position = Vector2(576, 529)
-scale = Vector2(2, 2)
-texture = ExtResource("16_kn7wv")
 
 [connection signal="pressed" from="Daulet" to="." method="_on_daulet_pressed"]
 [connection signal="pressed" from="Mariam" to="." method="_on_mariam_pressed"]

@@ -1,17 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://0d2mgtg4eqa"]
+[gd_scene load_steps=2 format=3 uid="uid://0d2mgtg4eqa"]
 
-[ext_resource type="Texture2D" uid="uid://c2khkikqt1518" path="res://assets/img/obstacles/traffic.png" id="1_5hfcg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqah0"]
-size = Vector2(54.5, 25)
+[ext_resource type="Texture2D" uid="uid://dh3dkvuta26u7" path="res://assets/img/obstacles/Tires.png" id="1_aq8tq"]
 
 [node name="Wheel" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.99491
 scale = Vector2(2, 2)
-texture = ExtResource("1_5hfcg")
+texture = ExtResource("1_aq8tq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-14.25, -1)
-shape = SubResource("RectangleShape2D_nqah0")
+polygon = PackedVector2Array(-29.75, 29, -78.75, 31, -77.75, 53, 76.25, 58, 106.25, 30, 106.25, -1, 75.25, -31, 33.25, -26, 14.25, -53, -54.75, 8)

@@ -15,8 +15,8 @@ const CHAR_START_POS := Vector2i(215, 450)
 const CAM_START_POS := Vector2i(576, 324)
 
 const START_SPEED : float = 600.0
-const MAX_SPEED : int = 1500
-const SPEED_K : int = 100
+const MAX_SPEED : int = 2000
+const SPEED_K : int = 90
 const SCORE_K : int = 1000
 const MIN_OBS_DIST : int = 500
 const MAX_OBS_DIST : int = 5000
@@ -38,7 +38,14 @@ func debug_print_tick(score: int, speed: float) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#$Char.set_char_name(["Alex", "Kirill", "Max", "Vitaliy"].pick_random())
+	
+	if not Globals.force_char:
+		var names = ["Alex", "Kirill", "Max", "Vitaliy"]
+		names.erase(Globals.current_char)
+		Globals.current_char = names.pick_random()
+		
+	Globals.force_char = false
+	$Char.set_char_name(Globals.current_char)
 	random = RandomNumberGenerator.new()
 	$Char.position = CHAR_START_POS
 	$Char.velocity = Vector2i(0, 0)
@@ -50,7 +57,7 @@ func _process(delta: float) -> void:
 	if is_dying:
 		return
 	
-	var speed = get_speed(delta)
+	var speed = get_speed()
 	var score = get_score()
 	
 	generate_obs()
@@ -63,7 +70,7 @@ func _process(delta: float) -> void:
 	
 	#debug_print_tick(score, speed)
 
-func get_speed(delta: float) -> float:
+func get_speed() -> float:
 	var distance = $Char.position.x - CHAR_START_POS.x
 	var speed = START_SPEED + distance / SPEED_K
 	if speed > MAX_SPEED:
@@ -106,11 +113,11 @@ func generate_obs() -> void:
 	
 	var probs = get_probs()
 	var obs = obs_types[random.rand_weighted(probs)].instantiate()
-	var obs_h = obs.get_node("Sprite2D").texture.get_height()
 	
 	var SpawnPoint = $Camera2D/ObsGroundSpawnPoint.position
 	if obs.has_node("IsFlying"):
 		SpawnPoint = $Camera2D/ObsSkySpawnPoint.position
+		SpawnPoint.y += randi_range(-50, 50)
 	
 	var obs_x = $Camera2D.position.x + SpawnPoint.x + randi_range(0, 1000)
 	var obs_y : int = $Camera2D.position.y + SpawnPoint.y

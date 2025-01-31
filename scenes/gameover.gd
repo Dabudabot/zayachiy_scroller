@@ -16,6 +16,7 @@ func format_score(score: int) -> String:
 	return padded.substr(padded.length() - 4, 4)
 	
 func update_info(score: int) -> void:
+	$Head.play("alive_" + Globals.current_char)
 	if score > 60:
 		$Good.show()
 		$Bad.hide()
@@ -28,7 +29,9 @@ func update_info(score: int) -> void:
 		$Good/win500.show()
 		$Good/win700.hide()
 		return
-	$Good.hide()
+	$Head.play("dead_" + Globals.current_char)
+	$Bad/Sign.play("sign_" + Globals.current_char)
+	$Good.hide() 
 	$Bad.show()
 
 func _process(delta: float) -> void:

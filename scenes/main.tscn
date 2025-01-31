@@ -37,7 +37,7 @@ position = Vector2(590, 600)
 shape = SubResource("RectangleShape2D_oqcsy")
 
 [node name="ObsSkySpawnPoint" type="Node2D" parent="Camera2D"]
-position = Vector2(799, -100)
+position = Vector2(799, -150)
 
 [node name="ObsGroundSpawnPoint" type="Node2D" parent="Camera2D"]
 position = Vector2(799, 190)

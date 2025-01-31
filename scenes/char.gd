@@ -9,6 +9,9 @@ var is_dying : bool = false
 
 func set_char_name(new_name: String) -> void:
 	char_name = new_name
+	
+func get_char_name() -> String:
+	return char_name
 
 func _physics_process(delta: float) -> void:
 	velocity.y += GRAVITY * delta
