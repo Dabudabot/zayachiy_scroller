@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://dgssx8f8bdh24"]
+[gd_scene format=3 uid="uid://dgssx8f8bdh24"]
 
-[ext_resource type="Script" path="res://scenes/gameover.gd" id="1_qybjd"]
+[ext_resource type="Script" uid="uid://b45amsxet8vnk" path="res://scenes/gameover.gd" id="1_qybjd"]
 [ext_resource type="PackedScene" uid="uid://b4nqx0hgienye" path="res://scenes/bg.tscn" id="2_1y2h5"]
 [ext_resource type="Texture2D" uid="uid://c48we0h0txcqi" path="res://assets/img/HUD/Refresh.png" id="2_sx3xp"]
 [ext_resource type="FontFile" uid="uid://dnd5m8sttr5p1" path="res://assets/fonts/joystix monospace.otf" id="5_gnny7"]
@@ -30,7 +30,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_ojsty")
 }],
-"loop": true,
+"loop": 1,
 "name": &"alive_Alex",
 "speed": 5.0
 }, {
@@ -38,7 +38,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_f60gj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"alive_Kirill",
 "speed": 5.0
 }, {
@@ -46,7 +46,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_lw5ek")
 }],
-"loop": true,
+"loop": 1,
 "name": &"alive_Max",
 "speed": 5.0
 }, {
@@ -54,7 +54,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_c8f5o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"alive_Vitaliy",
 "speed": 5.0
 }, {
@@ -62,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_l8xi0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dead_Alex",
 "speed": 5.0
 }, {
@@ -70,7 +70,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_1d1ko")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dead_Kirill",
 "speed": 5.0
 }, {
@@ -78,7 +78,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_nr724")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dead_Max",
 "speed": 5.0
 }, {
@@ -86,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_o3b4x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dead_Vitaliy",
 "speed": 5.0
 }]
@@ -97,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_qilxy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sign_Alex",
 "speed": 5.0
 }, {
@@ -105,7 +105,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_jtqsh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sign_Kirill",
 "speed": 5.0
 }, {
@@ -113,7 +113,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_elftq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sign_Max",
 "speed": 5.0
 }, {
@@ -121,25 +121,25 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_g1mhd")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sign_Vitaliy",
 "speed": 5.0
 }]
 
-[node name="GameOver" type="Node"]
+[node name="GameOver" type="Node" unique_id=972785012]
 script = ExtResource("1_qybjd")
 metadata/_edit_vertical_guides_ = [30.0, 1124.0]
 
-[node name="bg" parent="." instance=ExtResource("2_1y2h5")]
+[node name="bg" parent="." unique_id=1537234848 instance=ExtResource("2_1y2h5")]
 
-[node name="HighScore" type="Sprite2D" parent="."]
+[node name="HighScore" type="Sprite2D" parent="." unique_id=1056357940]
 texture_filter = 1
 position = Vector2(651, 461)
 scale = Vector2(2, 2)
 texture = ExtResource("5_x6m5k")
 centered = false
 
-[node name="HighScoreStr" type="Label" parent="HighScore"]
+[node name="HighScoreStr" type="Label" parent="HighScore" unique_id=250978310]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.793
@@ -159,14 +159,14 @@ text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CurrScore" type="Sprite2D" parent="."]
+[node name="CurrScore" type="Sprite2D" parent="." unique_id=1932799439]
 texture_filter = 1
 position = Vector2(367, 461)
 scale = Vector2(2, 2)
 texture = ExtResource("7_sep4w")
 centered = false
 
-[node name="CurrScoreStr" type="Label" parent="CurrScore"]
+[node name="CurrScoreStr" type="Label" parent="CurrScore" unique_id=1298871663]
 anchors_preset = -1
 anchor_left = 0.679
 anchor_top = 0.5
@@ -186,68 +186,62 @@ text = "0000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Daulet" type="TouchScreenButton" parent="."]
+[node name="Daulet" type="TouchScreenButton" parent="." unique_id=784995655]
 texture_filter = 1
 position = Vector2(29, 545)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("10_ngfqx")
 
-[node name="Mariam" type="TouchScreenButton" parent="."]
+[node name="Mariam" type="TouchScreenButton" parent="." unique_id=1660097812]
 texture_filter = 1
 position = Vector2(907, 545)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("11_kgh2o")
 
-[node name="Head" type="AnimatedSprite2D" parent="."]
+[node name="Head" type="AnimatedSprite2D" parent="." unique_id=230115398]
 texture_filter = 1
 position = Vector2(576, 529)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g548s")
 animation = &"dead_Max"
 
-[node name="Bad" type="Node2D" parent="."]
+[node name="Bad" type="Node2D" parent="." unique_id=963729319]
 
-[node name="restartBtn" type="TouchScreenButton" parent="Bad"]
+[node name="restartBtn" type="TouchScreenButton" parent="Bad" unique_id=421146363]
 texture_filter = 1
 position = Vector2(29, 210)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_sx3xp")
 
-[node name="webBtn" type="TouchScreenButton" parent="Bad"]
-texture_filter = 1
-position = Vector2(798, 210)
-scale = Vector2(1.1, 1.1)
-texture_normal = ExtResource("6_6bgt3")
-
-[node name="Sign" type="AnimatedSprite2D" parent="Bad"]
+[node name="Sign" type="AnimatedSprite2D" parent="Bad" unique_id=1795320490]
 texture_filter = 1
 position = Vector2(576, 262)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2ur4n")
 animation = &"sign_Alex"
 
-[node name="Good" type="Node2D" parent="."]
+[node name="Good" type="Node2D" parent="." unique_id=865914552]
 visible = false
 
-[node name="restartBtn" type="TouchScreenButton" parent="Good"]
+[node name="restartBtn" type="TouchScreenButton" parent="Good" unique_id=1979915118]
 texture_filter = 1
 position = Vector2(803, 345)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_sx3xp")
 
-[node name="webBtn" type="TouchScreenButton" parent="Good"]
+[node name="webBtn" type="TouchScreenButton" parent="Good" unique_id=295944]
 texture_filter = 1
 position = Vector2(531, 161)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("6_6bgt3")
 
-[node name="win500" type="TouchScreenButton" parent="Good"]
+[node name="win500" type="TouchScreenButton" parent="Good" unique_id=133274819]
 texture_filter = 1
 position = Vector2(30, 23)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("14_4u2sa")
 
-[node name="win700" type="TouchScreenButton" parent="Good"]
+[node name="win700" type="TouchScreenButton" parent="Good" unique_id=1423110263]
 texture_filter = 1
 position = Vector2(29, 23)
 scale = Vector2(2, 2)
@@ -256,7 +250,6 @@ texture_normal = ExtResource("15_uwks7")
 [connection signal="pressed" from="Daulet" to="." method="_on_daulet_pressed"]
 [connection signal="pressed" from="Mariam" to="." method="_on_mariam_pressed"]
 [connection signal="pressed" from="Bad/restartBtn" to="." method="_on_restart_btn_pressed"]
-[connection signal="pressed" from="Bad/webBtn" to="." method="_on_web_btn_pressed"]
 [connection signal="pressed" from="Good/restartBtn" to="." method="_on_restart_btn_pressed"]
 [connection signal="pressed" from="Good/webBtn" to="." method="_on_web_btn_pressed"]
 [connection signal="pressed" from="Good/win500" to="." method="_on_win_500_pressed"]
